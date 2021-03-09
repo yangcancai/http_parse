@@ -1073,9 +1073,15 @@ check_para_test() ->
 
 check_object_test() ->
     %% set object cond
+    Cond = #{body => [{object, [object, required]}]},
+    ?assertEqual({error, ?COMBINE_ERR(?HEAD_ERR(object, body), ?TYPE_ERR(object))},
+                 http_parse:check_para(#{body =>
+                                             #{object =>
+                                                   #{<<"id">> => <<"20">>,
+                                                     <<"name">> => <<"12345">>}}},
+                                       Cond)),
     ObjCond = #{object => [{id, [pos_integer, required]}, {name, [{binary, 5}, optional]}]},
     put(object, ObjCond),
-    Cond = #{body => [{object, [object, required]}]},
     ?assertEqual({ok, #{body => #{object => #{<<"id">> => 20, <<"name">> => <<"12345">>}}}},
                  http_parse:check_para(#{body =>
                                              #{object =>

@@ -63,8 +63,7 @@ check_para(Data, Cond) ->
     try
         check_param(Data, Cond)
     catch
-        E:ErrorMsg:Stack ->
-            io:format("e = ~p, stack = ~p", [E, Stack]),
+        _E:ErrorMsg:_Stack ->
             ErrorMsg
     end.
 
@@ -341,11 +340,16 @@ get_new_param_(NeedCheckVal, {binary, Length}, OptType) ->
             {error, ErrMSG}
     end;
 get_new_param_(NeedCheckVal, Type, _OptType) ->
-    case check_param(#{Type => NeedCheckVal}, get(Type)) of
-        {ok, New} ->
-            {ok, maps:get(Type, New)};
-        E ->
-            E
+    case get(Type) of
+        undefined ->
+            {error, <<"unknown type ", (to_binary(Type))/binary>>};
+        Cond ->
+            case check_param(#{Type => NeedCheckVal}, Cond) of
+                {ok, New} ->
+                    {ok, maps:get(Type, New)};
+                E ->
+                    E
+            end
     end.
 
 get_map_int_limit(integer) ->

@@ -61,5 +61,6 @@
                           Type,
                           ", type is ",
                           Opt]))).
+-define(TYPE_ERR(Type), <<"unknown type ", (http_parse:to_binary(Type))/binary>>).
 
 -endif.
