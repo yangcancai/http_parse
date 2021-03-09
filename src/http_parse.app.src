@@ -1,5 +1,5 @@
 {application, http_parse,
- [{description, "An OTP application"},
+ [{description, "The level request data protocol parse for cowboy or other http framework"},
   {vsn, "0.1.0"},
   {registered, []},
   {mod, {http_parse_app, []}},

@@ -42,7 +42,6 @@ shell: epmd config
 	rebar3 as test shell
 
 config: epmd
-	tool.sh replace_config
 
 dialyzer: epmd
 	rebar3 do dialyzer
@@ -57,4 +56,4 @@ tar: epmd
 .PHONY: epmd
 
 epmd:
-	@pgrep epmd 2>denull >denull || epmd -daemon || true
+	@pgrep epmd 2>/dev/null >/dev/null || epmd -daemon || true

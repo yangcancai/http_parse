@@ -12,7 +12,7 @@
 
 %% API
 -export([check_para/2, body/1, qs/1, bindings/1, headers/1, to_binary/1, to_list/1,
-         combine_binary/2]).
+         combine_binary/2, to_atom/1]).
 
 -type headers() :: body().
 -type bindings() :: body().
@@ -63,7 +63,8 @@ check_para(Data, Cond) ->
     try
         check_param(Data, Cond)
     catch
-        _E:ErrorMsg ->
+        E:ErrorMsg:Stack ->
+            io:format("e = ~p, stack = ~p", [E, Stack]),
             ErrorMsg
     end.
 
@@ -98,11 +99,11 @@ check_param(Data, Cond) ->
     NewData =
         maps:fold(fun(Key, V, InAcc) ->
                      {ParaType, AlterCond} = change_cond_form(V),
-                     case maps:find(Key, Data) of
-                         {ok, KeyVal} ->
+                     case mapsfind(Key, Data) of
+                         {_, undefined} -> throw({error, ?BODY_DRR(Key)});
+                         {NewKey, KeyVal} ->
                              Value = check_param_(ParaType, AlterCond, KeyVal, Key),
-                             maps:put(Key, Value, InAcc);
-                         error -> throw({error, ?BODY_DRR(Key)})
+                             maps:put(NewKey, Value, InAcc)
                      end
                   end,
                   Data,
@@ -243,7 +244,13 @@ get_new_param_(NeedCheckVal, binary, OptType) ->
             {error, ErrMGS}
     end;
 %% @doc 检查 integer/pos_integer/non_neg_integer/bigint/pos_bigint
-get_new_param_(NeedCheckVal, IntType, OptType) when is_atom(IntType) ->
+get_new_param_(NeedCheckVal, IntType, OptType)
+    when IntType == integer;
+         IntType == pos_integer;
+         IntType == non_neg_integer;
+         IntType == neg_integer;
+         IntType == bigint;
+         IntType == pos_bigint ->
     case catch to_integer(NeedCheckVal) of
         Val when is_integer(Val) ->
             {Min, Max} = get_map_int_limit(IntType),
@@ -332,6 +339,13 @@ get_new_param_(NeedCheckVal, {binary, Length}, OptType) ->
         _ ->
             ErrMSG = ?TYPE_ERR(NeedCheckVal, binary, OptType),
             {error, ErrMSG}
+    end;
+get_new_param_(NeedCheckVal, Type, _OptType) ->
+    case check_param(#{Type => NeedCheckVal}, get(Type)) of
+        {ok, New} ->
+            {ok, maps:get(Type, New)};
+        E ->
+            E
     end.
 
 get_map_int_limit(integer) ->
@@ -428,6 +442,20 @@ to_number(V) when is_list(V) ->
     end;
 to_number(V) when is_binary(V) ->
     to_float(binary_to_list(V)).
+
+to_atom(V) when is_atom(V) ->
+    V;
+to_atom(V) when is_integer(V) ->
+    to_atom(erlang:integer_to_binary(V));
+to_atom(V) when is_list(V) ->
+    erlang:list_to_atom(V);
+to_atom(V) when is_binary(V) ->
+    erlang:binary_to_atom(V, utf8);
+to_atom(V) when is_float(V) ->
+    to_atom(V, 4).
+
+to_atom(V, N) when is_float(V) ->
+    to_atom(erlang:float_to_binary(V, [{decimals, N}])).
 
 combine_binary(A, B) ->
     <<A/binary, B/binary>>.

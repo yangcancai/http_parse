@@ -617,8 +617,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -663,8 +663,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -703,8 +703,8 @@ check_para_test() ->
                           <<"content-length">> => <<"155">>,
                           <<"content-type">> => <<"text/plain">>,
                           <<"host">> => <<"127.0.0.1:9191">>,
-                          <<"merchantcode">> => <<"fg">>,
-                          <<"merchantname">> => <<"fg">>,
+                          <<"merchantcode">> => <<"xx">>,
+                          <<"merchantname">> => <<"xx">>,
                           <<"postman-token">> => <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                           <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
                           <<"user-agent">> => <<"PostmanRuntime/7.15.2">>},
@@ -739,8 +739,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -778,8 +778,8 @@ check_para_test() ->
                           <<"content-length">> => <<"155">>,
                           <<"content-type">> => <<"text/plain">>,
                           <<"host">> => <<"127.0.0.1:9191">>,
-                          <<"merchantcode">> => <<"fg">>,
-                          <<"merchantname">> => <<"fg">>,
+                          <<"merchantcode">> => <<"xx">>,
+                          <<"merchantname">> => <<"xx">>,
                           <<"postman-token">> => <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                           <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
                           <<"user-agent">> => <<"PostmanRuntime/7.15.2">>},
@@ -803,8 +803,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -849,8 +849,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -891,8 +891,8 @@ check_para_test() ->
                           <<"content-length">> => <<"155">>,
                           <<"content-type">> => <<"text/plain">>,
                           <<"host">> => <<"127.0.0.1:9191">>,
-                          <<"merchantcode">> => <<"fg">>,
-                          <<"merchantname">> => <<"fg">>,
+                          <<"merchantcode">> => <<"xx">>,
+                          <<"merchantname">> => <<"xx">>,
                           <<"postman-token">> => <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                           <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
                           <<"user-agent">> => <<"PostmanRuntime/7.15.2">>},
@@ -915,8 +915,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -959,8 +959,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -1002,8 +1002,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -1046,8 +1046,8 @@ check_para_test() ->
                                                <<"content-length">> => <<"155">>,
                                                <<"content-type">> => <<"text/plain">>,
                                                <<"host">> => <<"127.0.0.1:9191">>,
-                                               <<"merchantcode">> => <<"fg">>,
-                                               <<"merchantname">> => <<"fg">>,
+                                               <<"merchantcode">> => <<"xx">>,
+                                               <<"merchantname">> => <<"xx">>,
                                                <<"postman-token">> =>
                                                    <<"5c8af139-ad31-4f4e-975d-0cdff5f5d4f0">>,
                                                <<"token">> => <<"AQAAAABcNy0ht3ItRiy6zPjh8pnOu">>,
@@ -1069,4 +1069,21 @@ check_para_test() ->
                                               {op_type, [pos_integer, optional]},
                                               {op_uname, [{binary, 20}, optional]}]})),
 
+    ok.
+
+check_object_test() ->
+    %% set object cond
+    ObjCond = #{object => [{id, [pos_integer, required]}, {name, [{binary, 5}, optional]}]},
+    put(object, ObjCond),
+    Cond = #{body => [{object, [object, required]}]},
+    ?assertEqual({ok, #{body => #{object => #{<<"id">> => 20, <<"name">> => <<"12345">>}}}},
+                 http_parse:check_para(#{body =>
+                                             #{object =>
+                                                   #{<<"id">> => <<"20">>,
+                                                     <<"name">> => <<"12345">>}}},
+                                       Cond)),
+
+    ?assertEqual({ok, #{<<"object">> => #{<<"id">> => 20}}},
+                 http_parse:check_para(#{<<"object">> => #{<<"id">> => <<"20">>}},
+                                       #{object => [{id, [pos_integer, required]}]})),
     ok.
