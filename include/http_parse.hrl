@@ -1,3 +1,6 @@
+-ifndef(H_HTTP_PARSE).
+
+-define(H_HTTP_PARSE, true).
 %% @doc 值，类型integer/float/number/list，条件:optional/required
 -define(TYPE_ERR(Val, Type, Opt),
         http_parse:to_binary(
@@ -58,3 +61,5 @@
                           Type,
                           ", type is ",
                           Opt]))).
+
+-endif.
