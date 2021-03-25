@@ -344,12 +344,8 @@ get_new_param_(NeedCheckVal, Type, _OptType) ->
         undefined ->
             {error, <<"unknown type ", (to_binary(Type))/binary>>};
         Cond ->
-            case check_param(#{Type => NeedCheckVal}, Cond) of
-                {ok, New} ->
-                    {ok, maps:get(Type, New)};
-                E ->
-                    E
-            end
+            {ok, New} = check_param(#{Type => NeedCheckVal}, Cond),
+            {ok, maps:get(Type, New)}
     end.
 
 get_map_int_limit(integer) ->
