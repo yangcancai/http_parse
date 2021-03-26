@@ -1100,3 +1100,26 @@ check_number_test() ->
                                        #{body => [{id, [{number, 0, 1}, required]}]})),
 
     ok.
+
+bigint_optional_test() ->
+    ?assertEqual({ok,
+                  #{body =>
+                        #{<<"d">> => <<"d">>,
+                          <<"a">> => <<"a">>,
+                          <<"s">> => 1,
+                          <<"e">> => 2,
+                          <<"app_key_id">> => 0}}},
+                 http_parse:check_para(#{body =>
+                                             #{<<"d">> => <<"d">>,
+                                               <<"a">> => <<"a">>,
+                                               <<"s">> => <<"1">>,
+                                               <<"e">> => <<"2">>,
+                                               <<"app_key_id">> => <<"0">>}},
+                                       #{body =>
+                                             [{d, [{binary, 1}, required]},
+                                              {a, [{binary, 1}, required]},
+                                              {s, [bigint, required]},
+                                              {e, [bigint, required]},
+                                              {app_key_id, [bigint, optional]}]})),
+
+    ok.
