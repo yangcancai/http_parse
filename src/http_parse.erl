@@ -441,7 +441,7 @@ to_number(V) when is_list(V) ->
             end
     end;
 to_number(V) when is_binary(V) ->
-    to_float(binary_to_list(V)).
+    to_number(binary_to_list(V)).
 
 to_atom(V) when is_atom(V) ->
     V;

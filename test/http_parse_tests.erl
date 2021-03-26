@@ -1093,3 +1093,10 @@ check_object_test() ->
                  http_parse:check_para(#{<<"object">> => #{<<"id">> => <<"20">>}},
                                        #{object => [{id, [pos_integer, required]}]})),
     ok.
+
+check_number_test() ->
+    ?assertEqual({ok, #{body => #{<<"id">> => 1}}},
+                 http_parse:check_para(#{body => #{<<"id">> => <<"1">>}},
+                                       #{body => [{id, [{number, 0, 1}, required]}]})),
+
+    ok.
