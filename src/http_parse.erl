@@ -63,11 +63,10 @@ check_para(Data, Cond) ->
     try
         check_param(Data, Cond)
     catch
-        _E:ErrorMsg:_Stack ->
+        _E:ErrorMsg->
             ErrorMsg
     end.
 
-%%      erlang:get_stacktrace()
 
 body(#{body := Body}) ->
     Body.
