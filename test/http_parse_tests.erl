@@ -1123,3 +1123,10 @@ bigint_optional_test() ->
                                               {app_key_id, [bigint, optional]}]})),
 
     ok.
+
+check_one_binary_test() ->
+    Cond = "^[a-zA-Z0-9][A-Za-z0-9_-_@_:#]{0,0}$",
+    ?assertEqual({ok, #{body => #{<<"d">> => <<"1">>}}},
+                 http_parse:check_para(#{body => #{<<"d">> => <<"1">>}},
+                                       #{body => [{d, [binary, required, Cond]}]})),
+    ok.
