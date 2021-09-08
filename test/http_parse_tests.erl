@@ -1132,7 +1132,9 @@ check_one_binary_test() ->
     ok.
 
 check_blank_binary_test() ->
-    Cond = "^[a-zA-Z0-9][A-Za-z0-9_\\-@:\\#,;\\?\\* \\^{}()!&\\/<>~]{0,50}$",
+    Cond =
+        "^[a-zA-Z0-9][A-Za-z0-9_\\-@:\\#,;\\?\\* \\^\\{\\}\\(\\)!&\\/\\<\\>\\"
+        "~]{0,50}$",
     ?assertEqual({ok, #{body => #{<<"d">> => <<"a_-@:#,:?* ^{}()!&/<>~">>}}},
                  http_parse:check_para(#{body => #{<<"d">> => <<"a_-@:#,:?* ^{}()!&/<>~">>}},
                                        #{body => [{d, [binary, required, Cond]}]})),
